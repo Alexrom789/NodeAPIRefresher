@@ -1,9 +1,12 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose')
 
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
+
+mongoose.connect('mongodb+srv://TestUser789:<PWHERE>@node-rest-shop-6kuqp.mongodb.net/test?retryWrites=true');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
